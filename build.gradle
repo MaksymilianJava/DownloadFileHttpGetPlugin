@@ -1,0 +1,60 @@
+plugins {
+    id 'groovy'
+    id 'com.gradle.plugin-publish' version '0.12.0'
+    id 'java-gradle-plugin'
+    id 'maven-publish'
+}
+
+group 'pl.oakfusion'
+version '0.1-SNAPSHOT'
+
+publishing{
+    repositories{
+        maven{
+            url = "$buildDir/repo"
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:3.0.7'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'org.apache.httpcomponents:httpclient:latest.integration'
+}
+
+test{
+    useJUnitPlatform()
+}
+
+gradlePlugin{
+    plugins{
+        downloadPlugin{
+            id = 'pl.oakfusion.downloadfilewithhttpget'
+            implementationClass = 'pl.oakfusion.DownloadFileHttpGetPlugin'
+        }
+    }
+}
+
+pluginBundle {
+    website = 'https://github.com/MaksymilianJava'
+    vcsUrl = 'https://github.com/MaksymilianJava'
+    description = 'Plugin for OakForge project, using downloadURL and downloadDeployToken ' +
+            'from properties of project where it is applied to send get request with header ' +
+            'DEPLOY-TOKEN: ${downloadDeployToken} and save response in file named same as ' +
+            'what is included in downloadURL after last /'
+    tags = ['download', 'http', 'request', 'header']
+
+    plugins {
+        downloadPlugin {
+            // id is captured from java-gradle-plugin configuration
+            displayName = 'Download File With Http Get'
+        }
+    }
+}

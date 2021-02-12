@@ -1,0 +1,86 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "pl.oakfusion",
+    "module": "DownloadFileHttpGetPlugin",
+    "version": "0.1-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.7",
+      "buildId": "so6hroeoczguvhne6unfgehy5q"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.codehaus.groovy",
+          "module": "groovy-all",
+          "version": {
+            "requires": "3.0.7"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "DownloadFileHttpGetPlugin-0.1-SNAPSHOT.jar",
+          "url": "DownloadFileHttpGetPlugin-0.1-SNAPSHOT.jar",
+          "size": 3530,
+          "sha512": "4431d82e87bcb5ed3c7124d7b4fcef7f6d8dc9d72d0f1c91c65e987b9fb5747f25732cbe658b704026a0fd2b7b545d1d7cc2e1c0da38dc6ddacf830a0040cf50",
+          "sha256": "803db18d79622d2bcca1db24aa042729fd8642755b91b0714c8d741324050af6",
+          "sha1": "eb94137f743e539c986c9e969fd42b75b9338918",
+          "md5": "8f1885f1be73f45703f3873ee421e1a6"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.apache.httpcomponents",
+          "module": "httpclient",
+          "version": {
+            "requires": "latest.integration"
+          }
+        },
+        {
+          "group": "org.codehaus.groovy",
+          "module": "groovy-all",
+          "version": {
+            "requires": "3.0.7"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "DownloadFileHttpGetPlugin-0.1-SNAPSHOT.jar",
+          "url": "DownloadFileHttpGetPlugin-0.1-SNAPSHOT.jar",
+          "size": 3530,
+          "sha512": "4431d82e87bcb5ed3c7124d7b4fcef7f6d8dc9d72d0f1c91c65e987b9fb5747f25732cbe658b704026a0fd2b7b545d1d7cc2e1c0da38dc6ddacf830a0040cf50",
+          "sha256": "803db18d79622d2bcca1db24aa042729fd8642755b91b0714c8d741324050af6",
+          "sha1": "eb94137f743e539c986c9e969fd42b75b9338918",
+          "md5": "8f1885f1be73f45703f3873ee421e1a6"
+        }
+      ]
+    }
+  ]
+}
