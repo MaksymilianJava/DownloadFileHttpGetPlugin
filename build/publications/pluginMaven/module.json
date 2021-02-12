@@ -3,7 +3,7 @@
   "component": {
     "group": "pl.oakfusion",
     "module": "DownloadFileHttpGetPlugin",
-    "version": "0.1-SNAPSHOT",
+    "version": "0.2-SNAPSHOT",
     "attributes": {
       "org.gradle.status": "integration"
     }
@@ -11,7 +11,7 @@
   "createdBy": {
     "gradle": {
       "version": "6.7",
-      "buildId": "so6hroeoczguvhne6unfgehy5q"
+      "buildId": "nm3qlu2qcfhjxjmnvfcojf56ke"
     }
   },
   "variants": [
@@ -35,13 +35,13 @@
       ],
       "files": [
         {
-          "name": "DownloadFileHttpGetPlugin-0.1-SNAPSHOT.jar",
-          "url": "DownloadFileHttpGetPlugin-0.1-SNAPSHOT.jar",
-          "size": 3530,
-          "sha512": "4431d82e87bcb5ed3c7124d7b4fcef7f6d8dc9d72d0f1c91c65e987b9fb5747f25732cbe658b704026a0fd2b7b545d1d7cc2e1c0da38dc6ddacf830a0040cf50",
-          "sha256": "803db18d79622d2bcca1db24aa042729fd8642755b91b0714c8d741324050af6",
-          "sha1": "eb94137f743e539c986c9e969fd42b75b9338918",
-          "md5": "8f1885f1be73f45703f3873ee421e1a6"
+          "name": "DownloadFileHttpGetPlugin-0.2-SNAPSHOT.jar",
+          "url": "DownloadFileHttpGetPlugin-0.2-SNAPSHOT.jar",
+          "size": 3462,
+          "sha512": "d8eab717221b158c6813b151cf14f3ffb4b7f199bfacf50898ec0b304de8d62feea97bd034b731b53a6aefe004efe950510c999cec0eefba0c793c09c02b5589",
+          "sha256": "d497387923cb93368ef7e2ba61357ac55d8774d811f829834981150280db0beb",
+          "sha1": "199f30e67acac98bf31c20c3bf6e03aa4988ed5d",
+          "md5": "bc8d812c37abca8438487f6805ea033f"
         }
       ]
     },
@@ -72,13 +72,13 @@
       ],
       "files": [
         {
-          "name": "DownloadFileHttpGetPlugin-0.1-SNAPSHOT.jar",
-          "url": "DownloadFileHttpGetPlugin-0.1-SNAPSHOT.jar",
-          "size": 3530,
-          "sha512": "4431d82e87bcb5ed3c7124d7b4fcef7f6d8dc9d72d0f1c91c65e987b9fb5747f25732cbe658b704026a0fd2b7b545d1d7cc2e1c0da38dc6ddacf830a0040cf50",
-          "sha256": "803db18d79622d2bcca1db24aa042729fd8642755b91b0714c8d741324050af6",
-          "sha1": "eb94137f743e539c986c9e969fd42b75b9338918",
-          "md5": "8f1885f1be73f45703f3873ee421e1a6"
+          "name": "DownloadFileHttpGetPlugin-0.2-SNAPSHOT.jar",
+          "url": "DownloadFileHttpGetPlugin-0.2-SNAPSHOT.jar",
+          "size": 3462,
+          "sha512": "d8eab717221b158c6813b151cf14f3ffb4b7f199bfacf50898ec0b304de8d62feea97bd034b731b53a6aefe004efe950510c999cec0eefba0c793c09c02b5589",
+          "sha256": "d497387923cb93368ef7e2ba61357ac55d8774d811f829834981150280db0beb",
+          "sha1": "199f30e67acac98bf31c20c3bf6e03aa4988ed5d",
+          "md5": "bc8d812c37abca8438487f6805ea033f"
         }
       ]
     }

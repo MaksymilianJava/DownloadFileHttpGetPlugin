@@ -12,7 +12,6 @@ class DownloadFileHttpGetPlugin implements Plugin<Project>{
         String url = properties.get('downloadURL')
         String deployToken = properties.get('downloadDeployToken')
         downloadFile(url, 'DEPLOY-TOKEN', deployToken)
-        println("applied download")
     }
     public static void downloadFile(String url, String headerName, String headerValue){
         def get = new HttpGet(url)
