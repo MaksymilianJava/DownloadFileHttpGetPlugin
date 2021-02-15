@@ -10,21 +10,25 @@ class DownloadFileHttpGetPlugin implements Plugin<Project>{
     public void apply(Project project) {
         Map<String, String> urlsAndTokens = getUrlsAndTokens(project.getProperties())
         urlsAndTokens.each {
-            downloadResponse(it.getKey(), 'DEPLO-TOKEN', it.getValue())
+            String url = it.getKey()
+            String deployToken = it.getValue()
+            downloadResponse(url, 'DEPLOY-TOKEN', deployToken)
         }
     }
 
-    private Map<String, String> getUrlsAndTokens(Map<String, String> properties){
-        Map<String, String> readedUrlsAndTokens = new HashMap<String, String>();
+    private Map<String, String> getUrlsAndTokens(Map<String, ?> properties){
+        Map<String, String> urlsAndTokens = new HashMap<String, String>();
         properties.each {
             String key = it.getKey()
-            if(key.startsWith('downloadURL')){
-                String deployToken = properties.get('downloadDeployToken'+key.substring(11))
+            if(key.startsWith("downloadURL")){
+                String deployToken = properties.get(new String('downloadDeployToken'+key.substring(11)))
                 if(deployToken != null){
-                    readedUrlsAndTokens.put(it.getValue(), deployToken)
+                    String url = it.getValue()
+                    urlsAndTokens.put(url, deployToken)
                 }
             }
         }
+        return urlsAndTokens
     }
 
     private void downloadResponse(String url, String headerName, String headerValue){
