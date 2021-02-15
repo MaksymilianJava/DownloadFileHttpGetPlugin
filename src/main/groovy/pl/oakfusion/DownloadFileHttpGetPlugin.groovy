@@ -8,19 +8,43 @@ import org.gradle.api.Project
 class DownloadFileHttpGetPlugin implements Plugin<Project>{
     @Override
     public void apply(Project project) {
-        Map<String, String> properties = project.getProperties()
-        String url = properties.get('downloadURL')
-        String deployToken = properties.get('downloadDeployToken')
-        downloadFile(url, 'DEPLOY-TOKEN', deployToken)
+        Map<String, String> urlsAndTokens = getUrlsAndTokens(project.getProperties())
+        urlsAndTokens.each {
+            downloadResponse(it.getKey(), 'DEPLO-TOKEN', it.getValue())
+        }
     }
-    public static void downloadFile(String url, String headerName, String headerValue){
+
+    private Map<String, String> getUrlsAndTokens(Map<String, String> properties){
+        Map<String, String> readedUrlsAndTokens = new HashMap<String, String>();
+        properties.each {
+            String key = it.getKey()
+            if(key.startsWith('downloadURL')){
+                String deployToken = properties.get('downloadDeployToken'+key.substring(11))
+                if(deployToken != null){
+                    readedUrlsAndTokens.put(it.getValue(), deployToken)
+                }
+            }
+        }
+    }
+
+    private void downloadResponse(String url, String headerName, String headerValue){
         def get = new HttpGet(url)
         get.addHeader(headerName, headerValue)
         def client = HttpClientBuilder.create().build()
-        def response = client.execute(get)
         def fileName = url.substring(url.lastIndexOf('/')+1)
-        def writer = new BufferedWriter(new FileWriter(fileName))
-        writer.write(response.getEntity().getContent().getText())
-        writer.close()
+        if(fileName.isBlank()) {
+            fileName = 'New File.txt'
+        }
+        try {
+            File file = new File(fileName)
+            if(!file.exists())
+                file.createNewFile()
+            def response = client.execute(get)
+            def writer = new BufferedWriter(new FileWriter(file))
+            writer.write(response.getEntity().getContent().getText())
+            writer.close()
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }

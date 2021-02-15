@@ -6,7 +6,7 @@ plugins {
 }
 
 group 'pl.oakfusion'
-version '0.2-SNAPSHOT'
+version '0.3-SNAPSHOT'
 
 publishing{
     repositories{
@@ -45,10 +45,14 @@ gradlePlugin{
 pluginBundle {
     website = 'https://github.com/MaksymilianJava'
     vcsUrl = 'https://github.com/MaksymilianJava/DownloadFileHttpGetPlugin'
-    description = 'Plugin for OakForge project, using downloadURL and downloadDeployToken ' +
-            'from properties of project where it is applied to send get request with header ' +
-            'DEPLOY-TOKEN: ${downloadDeployToken} and save response in file named same as ' +
-            'what is included in downloadURL after last /'
+    description = 'Plugin for OakForge project. Uses project properties with names starting ' +
+            'with downloadURL and downloadDeployToken to send http get request under given ' +
+            'url and save response in a file named same as part of url after last / if there ' +
+            'is nothing after last / then file is named "New File.txt". ' +
+            'To correctly map url and deploy token second part of names after downloadURL and ' +
+            'downloadDeployToken should be same(e.g. downloadURLMyFile, downloadDeployTokenMyFile).' +
+            'It is possible to save multiple responses, just add as many pairs of properties ' +
+            'with url and token as you want.'
     tags = ['download', 'http', 'request', 'header']
 
     plugins {
